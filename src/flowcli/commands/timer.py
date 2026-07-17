@@ -34,7 +34,9 @@ def start(ctx, task_id: int):
         return
 
     session_id = db.start_session(task_id)
-    console.print(f"[green]Started session #{session_id} on task #{task_id}[/green]: {task['description']}")
+    console.print(
+        f"[green]Started session #{session_id} on task #{task_id}[/green]: {task['description']}"
+    )
 
 
 @timer.command("stop")

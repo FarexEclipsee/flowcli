@@ -3,6 +3,7 @@
 This deliberately shells out to the `git` binary rather than depending on
 a third-party library, keeping FlowCLI's dependency footprint small.
 """
+
 from __future__ import annotations
 
 import subprocess

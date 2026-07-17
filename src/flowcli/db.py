@@ -5,6 +5,7 @@ exposes simple CRUD-style helpers used by the command layer. Keeping all
 SQL in one place makes the rest of the codebase storage-agnostic and easy
 to test with a temporary database file.
 """
+
 from __future__ import annotations
 
 import sqlite3
@@ -76,8 +77,7 @@ class Database:
     ) -> int:
         with self.cursor() as cur:
             cur.execute(
-                "INSERT INTO tasks (description, project, tag, branch) "
-                "VALUES (?, ?, ?, ?)",
+                "INSERT INTO tasks (description, project, tag, branch) " "VALUES (?, ?, ?, ?)",
                 (description, project, tag, branch),
             )
             return cur.lastrowid
@@ -123,16 +123,13 @@ class Database:
 
     def start_session(self, task_id: int) -> int:
         with self.cursor() as cur:
-            cur.execute(
-                "INSERT INTO sessions (task_id) VALUES (?)", (task_id,)
-            )
+            cur.execute("INSERT INTO sessions (task_id) VALUES (?)", (task_id,))
             return cur.lastrowid
 
     def open_session(self) -> Optional[sqlite3.Row]:
         with self.cursor() as cur:
             cur.execute(
-                "SELECT * FROM sessions WHERE ended_at IS NULL "
-                "ORDER BY started_at DESC LIMIT 1"
+                "SELECT * FROM sessions WHERE ended_at IS NULL " "ORDER BY started_at DESC LIMIT 1"
             )
             return cur.fetchone()
 

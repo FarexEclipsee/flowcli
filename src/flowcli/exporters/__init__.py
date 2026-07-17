@@ -5,6 +5,7 @@ contributed by third-party packages via the `flowcli.exporters` entry
 point group, so `flow report --format <name>` grows without touching
 this codebase.
 """
+
 from __future__ import annotations
 
 import sys

@@ -18,8 +18,12 @@ console = Console()
     help=f"Output format. Available: {', '.join(available_formats())}",
 )
 @click.option("--project", "-p", default=None, help="Filter by project.")
-@click.option("--since", default=None, help="Only include sessions started after this datetime (YYYY-MM-DD).")
-@click.option("--output", "-o", type=click.Path(dir_okay=False), default=None, help="Write report to a file.")
+@click.option(
+    "--since", default=None, help="Only include sessions started after this datetime (YYYY-MM-DD)."
+)
+@click.option(
+    "--output", "-o", type=click.Path(dir_okay=False), default=None, help="Write report to a file."
+)
 @click.pass_context
 def report(ctx, fmt: str, project: str | None, since: str | None, output: str | None):
     """Generate a time-tracking report."""

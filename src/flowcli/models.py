@@ -1,4 +1,5 @@
 """Small data-shaping helpers shared across commands and exporters."""
+
 from __future__ import annotations
 
 from datetime import datetime

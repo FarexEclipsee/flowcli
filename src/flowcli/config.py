@@ -4,6 +4,7 @@ Config lives at ~/.flowcli/config.yaml by default, but both the config
 directory and the database path can be overridden with environment
 variables, which is primarily useful for testing.
 """
+
 from __future__ import annotations
 
 import os

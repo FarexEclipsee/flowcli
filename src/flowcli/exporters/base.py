@@ -5,6 +5,7 @@ third-party package that registers a `flowcli.exporters` entry point (see
 pyproject.toml). This is what makes the report format list "pluggable"
 without FlowCLI's core needing to know about every format up front.
 """
+
 from __future__ import annotations
 
 from abc import ABC, abstractmethod
