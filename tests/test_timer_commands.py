@@ -38,3 +38,4 @@ def test_stop_with_no_active_session(runner, cli_env):
 def test_start_timer_on_missing_task(runner, cli_env):
     result = runner.invoke(main, ["timer", "start", "42"])
     assert "not found" in result.output
+    assert result.exit_code == 1
