@@ -23,7 +23,7 @@ def start(ctx, task_id: int):
     task = db.get_task(task_id)
     if task is None:
         console.print(f"[red]Task #{task_id} not found.[/red]")
-        return
+        ctx.exit(1)
 
     existing = db.open_session()
     if existing is not None:
